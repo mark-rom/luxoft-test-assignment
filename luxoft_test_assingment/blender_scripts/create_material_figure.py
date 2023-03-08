@@ -18,6 +18,20 @@ wm.read_homefile(use_empty=True)
 
 # set scene objects, lights, cameras
 scripts_utils.set_essential_objects()
+cube = data.objects['Cube']
+
+# создание и применение нового материала на объект
+material = data.materials.new('test_material')
+material.use_nodes = True
+mat_nodes = material.node_tree.nodes["Principled BSDF"]
+mat_nodes.inputs[0].default_value = (0.0670657, 0.0529372, 0.8, 1)
+
+if cube.data.materials:
+    # assign to 1st material slot
+    cube.data.materials[0] = material
+else:
+    # no slots
+    cube.data.materials.append(material)
 
 # render
 scene = context.scene

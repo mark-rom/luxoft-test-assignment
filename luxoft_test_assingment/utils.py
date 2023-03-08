@@ -1,8 +1,8 @@
 import json
 import platform
-from os import path, mkdir, listdir
 from datetime import datetime
 from functools import wraps
+from os import listdir, mkdir, path
 from typing import BinaryIO, List, Optional, Sequence
 
 import psutil
@@ -28,7 +28,7 @@ def get_scripts_names(scrpt_path: str) -> List[str]:
     return scripts_names
 
 
-def set_paths(cli_args, arg_names):
+def set_path(cli_args, arg_names):
     for arg in arg_names:
         if arg:
             value = path.abspath(getattr(cli_args, arg))

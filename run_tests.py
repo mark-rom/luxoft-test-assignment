@@ -1,9 +1,8 @@
 from os.path import join
-from subprocess import run, STDOUT
-
-from luxoft_test_assingment.argparser import parser
+from subprocess import STDOUT, run
 
 from luxoft_test_assingment import utils as u
+from luxoft_test_assingment.argparser import parser
 
 
 @u.timer

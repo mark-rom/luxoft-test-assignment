@@ -131,3 +131,5 @@ dmypy.json
 
 .vscode/
 *.dump%                                                                         pavelsergeev@MacBook-Air-Aleksandra mission_control_api_assignment % 
+
+test_results/
